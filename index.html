@@ -10,22 +10,39 @@
       
 <body class="font-sans text-gray-100 bg-[var(--darkest)]">
 
-  <!-- Header -->
-  <header class="bg-[var(--dark)] text-white shadow-md">
-    <div class="container mx-auto flex justify-between items-center px-6 py-4">
-      <h1 class="text-2xl font-bold">Sivarojn Engineering</h1>
-      <nav class="bg-[#000435] text-white p-4">
-        <div class="container mx-auto flex justify-between items-center">
-          <div class="space-x-4">
-            <a href="index.html" class="hover:underline">Home</a>
-            <a href="products.html" class="hover:underline">About</a>
-            <a href="customers.html" class="hover:underline">Services</a>
-            <a href="contact.html" class="hover:underline">Contact</a>
-          </div>
-        </div>
-      </nav> 
-    </div>
-  </header>
+<!-- Header -->
+<header class="bg-[#000435] text-white shadow-md fixed top-0 w-full z-50">
+  <div class="container mx-auto flex justify-between items-center px-6 py-4">
+    <h1 class="text-2xl font-bold">Sivarojn Engineering</h1>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex space-x-6 text-sm sm:text-base">
+      <a href="index.html" class="hover:underline font-bold border-b-2 border-white">Home</a>
+      <a href="#about" class="hover:underline">About</a>
+      <a href="#services" class="hover:underline">Services</a>
+      <a href="#contact" class="hover:underline">Contact</a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button id="menuBtn" class="md:hidden focus:outline-none">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+        viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="md:hidden hidden flex-col bg-[#000435] px-6 pb-4 space-y-2 text-sm">
+    <a href="index.html" class="hover:underline font-bold border-b border-white">Home</a>
+    <a href="#about" class="hover:underline">About</a>
+    <a href="#services" class="hover:underline">Services</a>
+    <a href="#contact" class="hover:underline">Contact</a>
+  </div>
+</header>
+
+
   
 <!-- Hero Slider -->
 <section class="relative overflow-hidden h-[550px]">
@@ -82,12 +99,83 @@
   </section>
 
   <!-- About -->
-  <section class="bg-[var(--light)] text-black py-16 px-6">
+  <section class="bg-[var(--light)] text-black py-16 px-6" id="about">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="text-3xl font-bold text-[var(--dark)] mb-4">About Us</h2>
       <p>
         Founded in 1993 by Mr. Suchat Gaterojn, Sivarojn Engineering specializes in mechanical part manufacturing, machine design, modification, and on-site installation. We aim to deliver high-quality solutions tailored to customer needs.
       </p>
+    </div>
+  </section>
+
+  <section class="py-12 bg-[#f4f8ff]" id="services">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-[#000435] mb-8">Our Services</h2>
+      <div class="grid md:grid-cols-2 gap-8 text-gray-700">
+        <div>
+          <h3 class="text-2xl font-semibold">Electrical & Control Systems</h3>
+          <p>Installation and maintenance of electrical panels, automation, and control systems for factories and industrial sites.</p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-semibold">Preventive Maintenance (PM)</h3>
+          <p>Scheduled inspections and maintenance to keep your operations running smoothly and prevent costly downtime.</p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-semibold">Energy Solutions</h3>
+          <p>Custom design and installation of high-efficiency systems to reduce energy consumption and increase sustainability.</p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-semibold">System Upgrades</h3>
+          <p>Modernization of outdated systems to improve performance, safety, and compliance with modern standards.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-12 bg-[#f4f8ff] text-gray-700" id="contact">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-6">Contact Us</h2>
+      <p class="mb-4 break-words whitespace-normal">
+        We’d love to hear from you.
+      </p>      
+      <div class="grid md:grid-cols-2 gap-8 items-start">
+        <!-- Contact Form -->
+        <form class="space-y-4 bg-white p-6 rounded-xl shadow-md min-h-[400px]">
+          <input type="text" placeholder="Your Name" class="w-full p-3 rounded bg-gray-100 text-black" />
+          <input type="email" placeholder="Your Email" class="w-full p-3 rounded bg-gray-100 text-black" />
+          <textarea placeholder="Your Message" rows="8" class="w-full p-3 rounded bg-gray-100 text-black"></textarea>
+          <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded">
+            Send
+          </button>
+        </form>
+      
+        <!-- Map & Contact Info -->
+        <div class="text-left bg-white p-6 rounded-xl shadow-md space-y-4">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3877.9829417255596!2d100.72844037508744!3d13.59785408677816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d5c9b8719d213%3A0x8a20140e28bb1fd0!2zU2l2YXJvam4gRW5naW5lZXJpbmcgY28uLGx0ZCDguJrguKPguLTguKnguLHguJcg4Lio4Li04Lin4LmC4Lij4LiI4LiZ4LmM4LmA4Lit4LmH4LiZ4LiI4Li04LmA4LiZ4Li14Lii4Lij4Li04LmI4LiHIOC4iOC4s-C4geC4seC4lA!5e0!3m2!1sen!2sth!4v1742808485470!5m2!1sen!2sth" width="550" height="315" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      
+          <div class="space-y-2 text-sm">
+            <p>
+              📍
+              <a
+                href="https://maps.app.goo.gl/UVQCzYLK2pJMe7dRA"
+                target="_blank"
+                class="underline hover:text-blue-500"
+              >
+                23/4 Moo.10 Thaparak Road, Samutprakarn, Thailand 10540
+              </a>
+            </p>
+            <p>
+              ✉️
+              <span
+                class="cursor-pointer underline hover:text-blue-500"
+                onclick="copyEmail()"
+              >
+                contact@sivarojn.com
+              </span>
+            </p>
+            <p>📞 (+66) 086-374-0499</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -101,7 +189,7 @@
     >
       23/4 Moo.10 Thaparak Road, Samutprakarn, Thailand 10540
     </a>
-|✉️ 
+| ✉️  
       <span
         class="cursor-pointer underline hover:text-blue-300"
         onclick="copyEmail()"
@@ -109,7 +197,7 @@
       >
         contact@sivarojn.com
       </span> |
-        📞 (+66) 086-374-0499 
+         📞 (+66) 086-374-0499 
     </p>
     <p class="mt-2">&copy; 2025 Sivarojn Engineering. All rights reserved.</p>
   </footer>

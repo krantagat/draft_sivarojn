@@ -42,3 +42,11 @@ function copyEmail() {
       console.error("Failed to copy email:", err);
     });
   }
+
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+menuBtn.addEventListener("click", () => {
+  mobileMenu.classList.toggle("hidden");
+});
+
