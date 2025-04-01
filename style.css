@@ -1,0 +1,13 @@
+:root {
+    --darkest: #000435;
+    --darker: #080E4B;
+    --dark: #151C62;
+    --mid-dark: #282E78;
+    --main: #3F468F;
+    --light: #A3A7D2;
+    --lighter: #CED0E8;
+  }
+  .dot {
+    transition: opacity 0.3s ease;
+  }
+    
